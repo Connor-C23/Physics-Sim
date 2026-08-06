@@ -63,5 +63,41 @@ namespace PhysicsSim {
 		{
 			return Vector3(x * value, y * value, z * value);
 		}
+
+		/** Adds the given vector to this. */
+		void operator+=(const Vector3& v)
+		{
+			x += v.x;
+			y += v.y;
+			z += v.z;
+		}
+		// Returns value of the given vector added to this
+		Vector3 operator+(const Vector3& v) const
+		{
+			return Vector3(x + v.x, y + v.y, z + v.z);
+		}
+
+		/** Subtracts the given vector from this. */
+		void operator-=(const Vector3& v)
+		{
+			x -= v.x;
+			y -= v.y;
+			z -= v.z;
+		}
+		
+		// Returns the value of the given vector subtracted from this.
+		
+		Vector3 operator-(const Vector3& v) const
+		{
+			return Vector3(x - v.x, y - v.y, z - v.z);
+		}
+
+		// add vector to this, scaled by given amount
+		void addScaledVector(const Vector3& vector, real scale)
+		{
+			x += vector.x * scale;
+			y += vector.y * scale;
+			z += vector.z * scale;
+		}
 	};
 }
