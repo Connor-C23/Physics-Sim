@@ -99,5 +99,25 @@ namespace PhysicsSim {
 			y += vector.y * scale;
 			z += vector.z * scale;
 		}
+
+		/**
+		* Calculates and returns a component-wise product of this
+		* vector with the given vector.
+		*/
+		Vector3 componentProduct(const Vector3& vector) const
+		{
+			return Vector3(x * vector.x, y * vector.y, z * vector.z);
+		}
+
+		/**
+		* Performs a component-wise product with the given vector and
+		* sets this vector to its result.
+		*/
+		void componentProductUpdate(const Vector3& vector)
+		{
+			x *= vector.x;
+			y *= vector.y;
+			z *= vector.z;
+		}
 	};
 }
