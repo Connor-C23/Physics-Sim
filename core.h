@@ -119,5 +119,24 @@ namespace PhysicsSim {
 			y *= vector.y;
 			z *= vector.z;
 		}
+
+		/**
+		* Calculates and returns the scalar product of this vector
+		* with the given vector.
+		*/
+		real scalarProduct(const Vector3& vector) const
+		{
+			return x * vector.x + y * vector.y + z * vector.z;
+		}
+
+		/**
+		* Calculates and returns the scalar product of this vector
+		* with the given vector.
+		*/
+			real operator *(const Vector3 & vector) const
+		{
+			return x * vector.x + y * vector.y + z * vector.z;
+		}
 	};
-}
+
+};
