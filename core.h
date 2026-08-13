@@ -137,6 +137,36 @@ namespace PhysicsSim {
 		{
 			return x * vector.x + y * vector.y + z * vector.z;
 		}
+
+			/**
+			* Calculates and returns the vector product of this vector
+			* with the given vector.
+			*/
+			Vector3 vectorProduct(const Vector3& vector) const
+			{
+				return Vector3(y * vector.z - z * vector.y,
+					z * vector.x - x * vector.z,
+					x * vector.y - y * vector.x);
+			}
+			/**
+			* Updates this vector to be the vector product of its current
+			* value and the given vector.
+			*/
+			void operator %=(const Vector3& vector)
+			{
+				*this = vectorProduct(vector);
+			}
+
+			/**
+			* Calculates and returns the vector product of this vector
+			* with the given vector.
+			*/
+			Vector3 operator%(const Vector3& vector) const
+			{
+				return Vector3(y * vector.z - z * vector.y,
+					z * vector.x - x * vector.z,
+					x * vector.y - y * vector.x);
+			}
 	};
 
 };
