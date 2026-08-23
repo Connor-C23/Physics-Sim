@@ -22,4 +22,11 @@ public:
 	* use) or any other constant acceleration.
 	*/
 	Vector3 acceleration;
+
+	/**
+	* Holds the amount of damping applied to linear
+	* motion. Damping is required to remove energy added
+	* through numerical instability in the integrator.
+	*/
+	real damping;
 };
