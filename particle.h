@@ -22,4 +22,21 @@ public:
 	* use) or any other constant acceleration.
 	*/
 	Vector3 acceleration;
+
+	/**
+	* Holds the amount of damping applied to linear
+	* motion. Damping is required to remove energy added
+	* through numerical instability in the integrator.
+	*/
+	real damping;
+
+	/**
+	* Holds the inverse of the mass of the particle. It
+	* is more useful to hold the inverse mass because
+	* integration is simpler and because in real-time
+	* simulation it is more useful to have objects with
+	* infinite mass (immovable) than zero mass
+	* (completely unstable in numerical simulation).
+	*/
+	real inverseMass;
 };
