@@ -23,12 +23,21 @@ public:
 	*/
 	Vector3 acceleration;
 
+
+	/**
+	 * Holds the accumulated force to be applied at the next
+	 * simulation iteration only. This is zeroed at each
+	 * integration step.
+	 */
+	Vector3 forceAccum;
+
 	/**
 	* Holds the amount of damping applied to linear
 	* motion. Damping is required to remove energy added
 	* through numerical instability in the integrator.
 	*/
 	real damping;
+
 
 	/**
 	* Holds the inverse of the mass of the particle. It
@@ -39,4 +48,13 @@ public:
 	* (completely unstable in numerical simulation).
 	*/
 	real inverseMass;
+
+	/**
+	* Integrates the particle forward in time by the given amount.
+	* This function uses a Newton-Euler integration method, which is a
+	* linear approximation of the correct integral. For this reason it
+	* may be inaccurate in some cases.
+	*/
+	void integrate(real duration);
+
 };
